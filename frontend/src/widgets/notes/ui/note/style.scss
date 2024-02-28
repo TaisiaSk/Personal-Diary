@@ -1,0 +1,27 @@
+.list-item {
+  border-top: 1.4px solid var(--text-color);
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+
+  &__date {
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 0.67em;
+    flex-grow: 1;
+  }
+
+  &__text {
+    width: 45%;
+    margin-right: 5%;
+    align-self: flex-end;
+    margin-bottom: 1em;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: end;
+    gap: 1em;
+    margin-right: 5%;
+  }
+}

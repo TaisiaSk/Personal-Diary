@@ -1,0 +1,14 @@
+.list {
+  min-width: 50vw;
+  max-width: 80vw;
+
+  button {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  :hover button {
+    visibility: visible;
+    opacity: 1;
+  }
+}

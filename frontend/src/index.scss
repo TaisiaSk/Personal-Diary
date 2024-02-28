@@ -1,0 +1,40 @@
+@import 'normalize.css';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  cursor: default;
+
+  color: #5d5a55;
+  background-color: #f7ebd3;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --background-color: #f7ebd3;
+  --text-color: #5d5a55;
+  --blue-color: #aebfbe;
+  --blue-dark-color: #798c8c;
+  --blue-light-color: #d0d9d4;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  margin: 0 0 0.33em 0;
+}
+
+p {
+  margin: 0;
+}
