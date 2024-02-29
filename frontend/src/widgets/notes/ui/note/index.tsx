@@ -14,7 +14,7 @@ const Note: FC<Props> = ({ date, text }) => {
         <p>{date}</p>
       </div>
       <div className="list-item__text">
-        <p>{text}</p>
+        <p contentEditable>{text}</p>
       </div>
       <div className="list-item__actions">
         <Button isInitialHide>Edit</Button>

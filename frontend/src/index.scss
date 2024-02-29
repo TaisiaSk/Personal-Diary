@@ -38,3 +38,9 @@ h1 {
 p {
   margin: 0;
 }
+
+textarea,
+textarea:focus {
+  outline: none;
+  border: none;
+}
