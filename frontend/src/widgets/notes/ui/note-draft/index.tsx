@@ -1,10 +1,20 @@
-import { ChangeEvent, FC, useRef, useState } from 'react';
+import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import { notesModel } from 'widgets';
 import { Button } from 'shared';
 import './style.scss';
 
-const NoteDraft: FC = () => {
-  const [note, setNote] = useState<string>('');
+const ONoteDraft: FC = () => {
+  const { draftNote, addNote, editNote, setDraftNote } = notesModel;
+
+  const [note, setNote] = useState<string>(draftNote ? draftNote.text : '');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    changeHeight();
+  }, []);
 
   const changeHeight = () => {
     const textarea = textareaRef.current;
@@ -17,6 +27,16 @@ const NoteDraft: FC = () => {
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setNote(e.target.value);
     changeHeight();
+  };
+
+  const handleClick = () => {
+    if (draftNote) {
+      editNote(draftNote._id, note);
+      setDraftNote(null);
+    } else {
+      note && addNote(note);
+    }
+    navigate('/');
   };
 
   return (
@@ -35,10 +55,10 @@ const NoteDraft: FC = () => {
         />
       </div>
       <div className="draft__add">
-        <Button>Done!</Button>
+        <Button onClick={handleClick}>Done!</Button>
       </div>
     </div>
   );
 };
 
-export { NoteDraft };
+export const NoteDraft = observer(ONoteDraft);
