@@ -23,8 +23,12 @@
   padding: 0.4em 1em;
   color: var(--text-color);
   width: 90%;
+  font-family: var(--font-text);
+  letter-spacing: 0.05em;
+  font-size: 1.1em;
 
   &::placeholder {
     color: var(--blue-color);
+    font-style: italic;
   }
 }

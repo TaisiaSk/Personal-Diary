@@ -5,10 +5,11 @@
   flex-direction: column;
 
   &__date {
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 0.8em;
     margin-top: 0.67em;
     flex-grow: 1;
+    letter-spacing: normal;
   }
 
   &__text {
