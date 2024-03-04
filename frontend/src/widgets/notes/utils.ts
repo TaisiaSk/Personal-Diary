@@ -13,6 +13,6 @@ const getDateStringFormat = (): string => {
   return [day, month, year].join('-');
 };
 
-export const getFullNote = (text: string): NoteType => {
-  return { _id: `${Math.random()}`, date: getDateStringFormat(), text };
+export const getFullNote = (text: string): Omit<NoteType, '_id'> => {
+  return { date: getDateStringFormat(), text };
 };
