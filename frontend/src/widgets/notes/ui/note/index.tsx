@@ -28,8 +28,8 @@ const Note: FC<Props> = ({ note }) => {
       </div>
       <div className="list-item__text">
         {/* <p>{note.text}</p> */}
-        {note.text.split('\n').map((item) => (
-          <p>{item}</p>
+        {note.text.split('\n').map((item, idx) => (
+          <p key={idx}>{item}</p>
         ))}
       </div>
       <div className="list-item__actions">

@@ -15,9 +15,9 @@ export const apiPostNote = (body: PostNoteType): AxiosPromise<NoteType> => {
 
 export const apiPatchNote = (data: PatchNoteType): AxiosPromise<NoteType> => {
   const { _id, text } = data;
-  return apiInstance.patch(`${BASE_URL}/:${_id}`, text);
+  return apiInstance.patch(`${BASE_URL}/${_id}`, { text });
 };
 
 export const apiDeleteNote = (id: string): AxiosPromise<DeleteNoteMessageType> => {
-  return apiInstance.delete(`${BASE_URL}/:${id}`);
+  return apiInstance.delete(`${BASE_URL}/${id}`);
 };
