@@ -28,6 +28,7 @@ class NotesController {
   async delete(req, res) {
     try {
       await PostsService.delete(req.params.id);
+      return res.json({ message: 'Successful delete' });
     } catch (err) {
       res.status(500).json(err.message);
     }
