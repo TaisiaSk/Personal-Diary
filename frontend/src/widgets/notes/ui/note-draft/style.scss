@@ -1,0 +1,34 @@
+.draft {
+  min-width: 50vw;
+  max-width: 80vw;
+  border-top: 1.4px solid var(--text-color);
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    margin: 1em 5% 0 5%;
+  }
+
+  &__add {
+    display: flex;
+    justify-content: end;
+    margin-right: 5%;
+  }
+}
+
+.note-textarea {
+  resize: none;
+  background-color: inherit;
+  padding: 0.4em 1em;
+  color: var(--text-color);
+  width: 90%;
+  font-family: var(--font-text);
+  letter-spacing: 0.05em;
+  font-size: 1.1em;
+
+  &::placeholder {
+    color: var(--blue-color);
+    font-style: italic;
+  }
+}
