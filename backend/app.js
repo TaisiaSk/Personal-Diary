@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import NotesRouter from './routes/notes-router.js';
 
 dotenv.config({ path: './.env' });
@@ -18,6 +19,7 @@ mongoose.connection
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/notes', NotesRouter);
