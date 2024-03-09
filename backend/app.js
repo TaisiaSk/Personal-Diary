@@ -7,7 +7,12 @@ import NotesRouter from './routes/notes-router.js';
 dotenv.config({ path: './.env' });
 
 const PORT = process.env.PORT || 8000;
-const DB_URL = process.env.MONGODB_URI;
+const MODE = process.env.MODE || 'LOCAL';
+
+const DB_URL =
+  MODE === 'LOCAL'
+    ? process.env.MONGODB_URI
+    : `mongodb://${process.env.MONGODB_SERVER}:${process.env.MONGODB_PORT}/notes`;
 
 mongoose.connection
   .on('connected', () => {
