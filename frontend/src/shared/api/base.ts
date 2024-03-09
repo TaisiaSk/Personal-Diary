@@ -1,6 +1,13 @@
 import axios from 'axios';
 
-const BASE_API_URL = import.meta.env.VITE_API_URL;
+const MODE = import.meta.env.VITE_MODE;
+let BASE_API_URL = '';
+
+if (MODE === 'LOCAL') {
+  const API_HOST = import.meta.env.VITE_API_HOST;
+  const API_PORT = import.meta.env.VITE_API_PORT;
+  BASE_API_URL = `http://${API_HOST}:${API_PORT}`;
+}
 
 const apiInstance = axios.create({
   baseURL: BASE_API_URL,
