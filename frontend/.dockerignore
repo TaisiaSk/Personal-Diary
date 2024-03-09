@@ -1,0 +1,6 @@
+Dockerfile
+.dockerignore
+.eslintrc.cjs
+*/.git
+*/node_modules
+*/dist
